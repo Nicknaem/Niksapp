@@ -6,7 +6,7 @@ self.addEventListener('install', (e) => {
         '/Niksapp/main.js',
         '/Niksapp/main.css',
         '/Niksapp/assets/backgrounds/1.jpg',
-        '/Niksapp/logos/n.png',
+        '/Niksapp/assets/logos/n.png',
       ])),
     );
   });
