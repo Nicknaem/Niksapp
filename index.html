@@ -6,7 +6,16 @@
     <meta name="viewport" content="initial-scale=1, viewport-fit=cover, width=device-width"></meta>
     <meta name="apple-mobile-web-app-capable" content="yes"></meta>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></meta>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffffff">
+    <script defer>
+        if('serviceWorker' in navigator) {
+          navigator.serviceWorker
+            .register('/sw.js')
+            .then(() => { console.log('Service Worker Registered'); });
+        };
+    </script>
 </head>
 <style>
     html {
@@ -22,6 +31,8 @@
     body{
         padding: 0;
         margin: 0;
+        overscroll-behavior-y: none;
+        overflow: hidden;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 13.5px;
         color: rgb(77, 44, 29);
@@ -37,6 +48,7 @@
     .panel{
         /* filter:blur(10px); */
         background-color: rgba(0, 0, 0, 0.2);
+        --webkit-backdrop-filter: blur(30px);
         backdrop-filter: blur(30px);
     }
     .header{
@@ -61,7 +73,7 @@
         align-items: center;
         margin-right: 12px;
         margin-left: 12px;
-        margin-top: auto;
+        /* margin-top: auto; */
     }
     .search{
         display: flex;
