@@ -8,19 +8,113 @@
     <title>Niksapp</title>
 </head>
 <style>
+    body{
+        padding: 0;
+        margin: 0;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 13.5px;
+        color: white;
+    }
     html {
         min-height: calc(100% + env(safe-area-inset-top));
         padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
         background-attachment: fixed;
-        background-image: url('./assets/backgrounds/1.jpg');
+        background-image: url('./assets/backgrounds/3.jpeg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
     }
+
+    .main{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .panel{
+        /* filter:blur(10px); */
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    .header{
+        height: 59px;
+        margin-bottom: 30px;
+    }
+
+    .apps-area{
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+        margin-left: 27px;
+        margin-right: 27px;
+    }
+
+    .footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
+    .search{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        height: 30px;
+        width:78px;
+        border-radius: 40px;
+        margin-bottom: 22px;
+    }
+    .bar{
+        display: flex;
+        height: 98px;
+        width: 100%;
+        margin-bottom: 11px;
+        margin-right: 12px;
+        margin-left: 12px;
+        border-radius: 42px;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 17px;
+    }
+    
+    .widget-wide{
+        height: 157px;
+        width: 335px;
+        border-radius: 20px;
+    }
+
+    .widget-square{
+        height: 157px;
+        width: 157px;
+        border-radius: 20px;
+    }
+
+    .container .title{
+        margin-top: 3px;
+    }
+    
 </style>
 <body>
     <div class="main">
-        
+        <div class="header"></div>
+        <div class="apps-area">
+            <div class="container">
+                <div class="widget-wide panel"></div>
+                <div class="title">Weather</div>
+            </div>
+            <div class="container">
+                <div class="widget-square panel"></div>
+                <div class="title">Batteries</div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="search panel">About</div>
+            <div class="bar panel"></div>
+        </div>
     </div>
 </body>
 </html>
