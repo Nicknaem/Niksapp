@@ -9,21 +9,22 @@
     <link rel="manifest" href="manifest.json">
 </head>
 <style>
+    html {
+        min-height: calc(100% + env(safe-area-inset-top));
+        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+        background-attachment: fixed;
+        background-image: url('./assets/backgrounds/9.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     body{
         padding: 0;
         margin: 0;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 13.5px;
-        color: white;
-    }
-    html {
-        min-height: calc(100% + env(safe-area-inset-top));
-        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-        background-attachment: fixed;
-        background-image: url('./assets/backgrounds/1.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        color: rgb(77, 44, 29);
     }
 
     .main{
@@ -36,6 +37,7 @@
     .panel{
         /* filter:blur(10px); */
         background-color: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(30px);
     }
     .header{
         height: 59px;
@@ -48,18 +50,23 @@
         margin-bottom: 28px;
         margin-left: 27px;
         margin-right: 27px;
+
+        row-gap: 17px;
+        column-gap: 25px;
     }
 
     .footer{
         display: flex;
         flex-direction: column;
-        align-items: center
+        align-items: center;
+        margin-right: 12px;
+        margin-left: 12px;
+        margin-top: auto;
     }
     .search{
         display: flex;
         justify-content: center;
         align-items: center;
-        color: white;
         height: 30px;
         width:78px;
         border-radius: 40px;
@@ -67,11 +74,9 @@
     }
     .bar{
         display: flex;
-        height: 98px;
         width: 100%;
+        height: 98px;
         margin-bottom: 11px;
-        margin-right: 12px;
-        margin-left: 12px;
         border-radius: 42px;
     }
 
@@ -79,7 +84,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 17px;
+    }
+
+    .container .title{
+        margin-top: 3px;
     }
     
     .widget-wide{
@@ -94,10 +102,13 @@
         border-radius: 20px;
     }
 
-    .container .title{
-        margin-top: 3px;
+    .app-icon{
+        width: 60px;
+        height: 60px;
+        border-radius: 14px;
+        background-color: white;
     }
-    
+
 </style>
 <body>
     <div class="main">
@@ -110,6 +121,10 @@
             <div class="container">
                 <div class="widget-square panel"></div>
                 <div class="title">Batteries</div>
+            </div>
+            <div class="container">
+                <div class="app-icon"></div>
+                <div class="title">Colors</div>
             </div>
         </div>
         <div class="footer">
